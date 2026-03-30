@@ -1,7 +1,7 @@
-from typing import Dict, List
+from typing import Any, Dict, List
 
 from environment import MediAssistOpenEnv
-from models import Action, Observation, Reward
+from models import Action
 
 
 class Grader:
@@ -19,7 +19,10 @@ class Grader:
             "info": info,
         }
 
-    def grade_sequence(self, actions: List[Action]) -> Dict[str, object]:
+    def grade_sequence(self, actions: List[Action]) -> Dict[str, Any]:
+        if len(actions) != 3:
+            raise ValueError("Exactly 3 actions are required: easy, medium, hard.")
+
         results = []
         for level, action in zip(["easy", "medium", "hard"], actions):
             results.append(self.grade_action(level, action))
