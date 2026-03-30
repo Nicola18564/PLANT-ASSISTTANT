@@ -1,0 +1,15 @@
+name: mediassist-openenv
+display_name: MediAssist OpenEnv
+description: "Healthcare decision-making training environment for agent evaluation and reinforcement learning."
+version: 0.1.0
+authors:
+  - name: Nicola18564
+license: mit
+entrypoint: environment:MediAssistOpenEnv
+framework: gym
+tags:
+  - healthcare
+  - openenv
+  - reinforcement-learning
+  - agent-training
+  - meta-hackathon
